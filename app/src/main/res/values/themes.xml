@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.TrackFit" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">#00E5FF</item>
+        <item name="colorSecondary">#1DE9E9</item>
+        <item name="colorTertiary">#00E5FF</item>
+        <item name="buttonStyle">@style/CustomButtonStyle</item>
+    </style>
+
+    <style name="Theme.TrackFit" parent="Base.Theme.TrackFit" />
+
+    <style name="CustomButtonStyle" parent="Widget.Material3.Button">
+        <item name="android:textColor">@color/button_text_color</item>
+        <item name="backgroundTint">@null</item>
+    </style>
+</resources>

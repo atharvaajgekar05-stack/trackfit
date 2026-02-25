@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:orientation="vertical"
+    android:paddingHorizontal="0dp">
+
+    <!-- Top Bar with Back Button and Title -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#121212"
+        android:paddingHorizontal="16dp"
+        android:gravity="center_vertical">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/ic_arrow_back"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="centerInside"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Unit Converter"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <!-- Main ScrollView for content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="16dp">
+
+            <!-- Description -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quick conversions for weight, height, and distance."
+                android:textColor="#B0B0B0"
+                android:textSize="14sp"
+                android:layout_marginBottom="28dp" />
+
+            <!-- ===== WEIGHT CONVERTER ===== -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Weight Converter"
+                android:textColor="#E0E0E0"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Weight Input -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="8dp">
+
+                <EditText
+                    android:id="@+id/etWeightInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toStartOf="@+id/spinnerWeightFrom"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/bg_input_dark"
+                    android:hint="Enter weight"
+                    android:inputType="numberDecimal"
+                    android:paddingHorizontal="16dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#666666"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/spinnerWeightFrom"
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_input_dark"
+                    android:gravity="center" />
+
+            </RelativeLayout>
+
+            <!-- Weight Converter Arrow -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="↓"
+                android:textColor="#00E5FF"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Weight Output -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:id="@+id/tvWeightResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toStartOf="@+id/spinnerWeightTo"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/bg_input_dark"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:textColor="#00E5FF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spinnerWeightTo"
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_input_dark"
+                    android:gravity="center" />
+
+            </RelativeLayout>
+
+            <!-- ===== HEIGHT CONVERTER ===== -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Height Converter"
+                android:textColor="#E0E0E0"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Height Input -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="8dp">
+
+                <EditText
+                    android:id="@+id/etHeightInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toStartOf="@+id/spinnerHeightFrom"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/bg_input_dark"
+                    android:hint="Enter height"
+                    android:inputType="numberDecimal"
+                    android:paddingHorizontal="16dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#666666"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/spinnerHeightFrom"
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_input_dark"
+                    android:gravity="center" />
+
+            </RelativeLayout>
+
+            <!-- Height Converter Arrow -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="↓"
+                android:textColor="#00E5FF"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Height Output -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:id="@+id/tvHeightResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toStartOf="@+id/spinnerHeightTo"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/bg_input_dark"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:textColor="#00E5FF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spinnerHeightTo"
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_input_dark"
+                    android:gravity="center" />
+
+            </RelativeLayout>
+
+            <!-- ===== DISTANCE CONVERTER ===== -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Distance Converter"
+                android:textColor="#E0E0E0"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Distance Input -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="8dp">
+
+                <EditText
+                    android:id="@+id/etDistanceInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toStartOf="@+id/spinnerDistanceFrom"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/bg_input_dark"
+                    android:hint="Enter distance"
+                    android:inputType="numberDecimal"
+                    android:paddingHorizontal="16dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#666666"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/spinnerDistanceFrom"
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_input_dark"
+                    android:gravity="center" />
+
+            </RelativeLayout>
+
+            <!-- Distance Converter Arrow -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="↓"
+                android:textColor="#00E5FF"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Distance Output -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="30dp">
+
+                <TextView
+                    android:id="@+id/tvDistanceResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toStartOf="@+id/spinnerDistanceTo"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/bg_input_dark"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:textColor="#00E5FF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spinnerDistanceTo"
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_input_dark"
+                    android:gravity="center" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

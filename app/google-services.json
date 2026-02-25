@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "205826028811",
+    "project_id": "truework-ca57a",
+    "storage_bucket": "truework-ca57a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:205826028811:android:19ee1087d5bc489e805e0e",
+        "android_client_info": {
+          "package_name": "com.example.trackfit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkXcUGJz7AA714IY1p7LN-KamRurIRAJo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

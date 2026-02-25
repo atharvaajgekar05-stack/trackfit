@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F1C1F">
+
+    <!-- Center group (shifted UP) -->
+    <LinearLayout
+        android:id="@+id/centerGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:translationY="-60dp"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/trackfit"/>
+
+        <!-- App name -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="TrackFit"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"/>
+
+        <!-- Tagline -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="PERFORMANCE TRACKING"
+            android:textSize="12sp"
+            android:letterSpacing="0.15"
+            android:textColor="#8FA3A8"/>
+    </LinearLayout>
+
+    <!-- INITIALIZING TEXT -->
+    <TextView
+        android:id="@+id/initText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/progressBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp"
+        android:text="INITIALIZING"
+        android:textSize="12sp"
+        android:letterSpacing="0.25"
+        android:textColor="#FFFFFF"/>
+
+    <!-- Dummy Progress Bar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="260dp"
+        android:layout_height="6dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="48dp"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="35"
+        android:progressDrawable="@drawable/progress_drawable"/>
+
+</RelativeLayout>

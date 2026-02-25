@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base card -->
+    <item>
+        <shape>
+            <solid android:color="#1A1A1A" />
+            <corners android:radius="12dp" />
+        </shape>
+    </item>
+    <!-- Left edge cyan line -->
+    <item android:right="0dp">
+        <shape>
+            <solid android:color="#00000000" />
+            <stroke android:width="4dp" android:color="#1DE9E9" />
+            <corners android:radius="12dp" />
+        </shape>
+    </item>
+    <!-- Cover up the top, right, and bottom strokes so only left is visible -->
+    <item android:left="4dp">
+        <shape>
+            <solid android:color="#1A1A1A" />
+            <corners
+                android:topRightRadius="12dp"
+                android:bottomRightRadius="12dp"
+                android:topLeftRadius="0dp"
+                android:bottomLeftRadius="0dp" />
+        </shape>
+    </item>
+</layer-list>
