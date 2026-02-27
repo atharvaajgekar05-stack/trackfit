@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#121212"
+    android:background="#0B0F14"
     android:orientation="vertical"
     android:paddingHorizontal="0dp">
 
@@ -13,7 +13,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:background="#121212"
+        android:background="#0B0F14"
         android:paddingHorizontal="16dp"
         android:gravity="center_vertical">
 
@@ -107,7 +107,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="↓"
-                android:textColor="#00E5FF"
+                android:textColor="#39cccc"
                 android:textSize="24sp"
                 android:gravity="center"
                 android:layout_marginBottom="8dp" />
@@ -127,7 +127,7 @@
                     android:background="@drawable/bg_input_dark"
                     android:gravity="center_vertical"
                     android:paddingHorizontal="16dp"
-                    android:textColor="#00E5FF"
+                    android:textColor="#39cccc"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -188,7 +188,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="↓"
-                android:textColor="#00E5FF"
+                android:textColor="#39cccc"
                 android:textSize="24sp"
                 android:gravity="center"
                 android:layout_marginBottom="8dp" />
@@ -208,7 +208,7 @@
                     android:background="@drawable/bg_input_dark"
                     android:gravity="center_vertical"
                     android:paddingHorizontal="16dp"
-                    android:textColor="#00E5FF"
+                    android:textColor="#39cccc"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -269,7 +269,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="↓"
-                android:textColor="#00E5FF"
+                android:textColor="#39cccc"
                 android:textSize="24sp"
                 android:gravity="center"
                 android:layout_marginBottom="8dp" />
@@ -289,7 +289,7 @@
                     android:background="@drawable/bg_input_dark"
                     android:gravity="center_vertical"
                     android:paddingHorizontal="16dp"
-                    android:textColor="#00E5FF"
+                    android:textColor="#39cccc"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -309,3 +309,9 @@
     </ScrollView>
 
 </LinearLayout>
+
+
+
+
+
+

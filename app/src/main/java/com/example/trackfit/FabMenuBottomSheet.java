@@ -47,8 +47,11 @@ public class FabMenuBottomSheet extends BottomSheetDialogFragment {
                 showToast("Water"));
 
         // Sleep
-        view.findViewById(R.id.card_sleep).setOnClickListener(v ->
-                showToast("Sleep"));
+        view.findViewById(R.id.card_sleep).setOnClickListener(v -> {
+            dismiss();
+            Intent intent = new Intent(requireActivity(), SleepTrackerActivity.class);
+            startActivity(intent);
+        });
 
         // Weight
         view.findViewById(R.id.card_weight).setOnClickListener(v -> {

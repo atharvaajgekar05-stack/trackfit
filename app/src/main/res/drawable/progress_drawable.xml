@@ -14,9 +14,15 @@
         <clip>
             <shape android:shape="rectangle">
                 <corners android:radius="8dp"/>
-                <solid android:color="#1DE9E9"/>
+                <solid android:color="#39cccc"/>
             </shape>
         </clip>
     </item>
 
 </layer-list>
+
+
+
+
+
+

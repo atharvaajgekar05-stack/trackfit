@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="#121212"
+    android:background="#0B0F14"
     android:paddingTop="16dp"
     android:paddingBottom="32dp">
 
@@ -62,7 +62,7 @@
                     android:layout_height="22dp"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_calculator"
-                    android:tint="#00E5FF"
+                    android:tint="#39cccc"
                     android:contentDescription="BMI Calculator" />
             </FrameLayout>
 
@@ -102,7 +102,7 @@
                     android:layout_height="22dp"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_convert"
-                    android:tint="#00E5FF"
+                    android:tint="#39cccc"
                     android:contentDescription="Unit Convertor" />
             </FrameLayout>
 
@@ -142,7 +142,7 @@
                     android:layout_height="22dp"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_activity"
-                    android:tint="#00E5FF"
+                    android:tint="#39cccc"
                     android:contentDescription="Activity" />
             </FrameLayout>
 
@@ -181,7 +181,7 @@
                     android:layout_height="22dp"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_food"
-                    android:tint="#00E5FF"
+                    android:tint="#39cccc"
                     android:contentDescription="Food" />
             </FrameLayout>
 
@@ -220,7 +220,7 @@
                     android:layout_height="22dp"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_water_drop"
-                    android:tint="#00E5FF"
+                    android:tint="#39cccc"
                     android:contentDescription="Water" />
             </FrameLayout>
 
@@ -259,7 +259,7 @@
                     android:layout_height="22dp"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_sleep"
-                    android:tint="#00E5FF"
+                    android:tint="#39cccc"
                     android:contentDescription="Sleep" />
             </FrameLayout>
 
@@ -298,7 +298,7 @@
                     android:layout_height="22dp"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_weight"
-                    android:tint="#00E5FF"
+                    android:tint="#39cccc"
                     android:contentDescription="Weight" />
             </FrameLayout>
 
@@ -316,3 +316,9 @@
     </GridLayout>
 
 </LinearLayout>
+
+
+
+
+
+

@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#121212"
+    android:background="#0B0F14"
     android:orientation="vertical"
     android:paddingHorizontal="0dp">
 
@@ -13,7 +13,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:background="#121212"
+        android:background="#0B0F14"
         android:paddingHorizontal="16dp"
         android:gravity="center_vertical">
 
@@ -61,76 +61,101 @@
                 android:textSize="14sp"
                 android:layout_marginBottom="32dp" />
 
-            <!-- Timer Display Card -->
+            <!-- Timer Display -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="@drawable/bg_card_dark"
-                android:padding="32dp"
                 android:gravity="center"
                 android:layout_marginBottom="24dp">
 
-                <!-- Digital Timer -->
-                <TextView
-                    android:id="@+id/tvTimer"
+                <!-- Circular Timer Container -->
+                <FrameLayout
+                    android:layout_width="280dp"
+                    android:layout_height="280dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="32dp"
+                    android:background="@drawable/bg_timer_circle">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <!-- Digital Timer -->
+                        <TextView
+                            android:id="@+id/tvTimer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="00:00:00"
+                            android:textColor="#39cccc"
+                            android:textSize="48sp"
+                            android:textStyle="bold"
+                            android:fontFamily="monospace" />
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+                <!-- Control Buttons Row -->
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="00:00:00"
-                    android:textColor="#00FF00"
-                    android:textSize="64sp"
-                    android:textStyle="bold"
+                    android:orientation="horizontal"
                     android:gravity="center"
-                    android:fontFamily="monospace"
-                    android:layout_marginBottom="24dp" />
+                    android:layout_marginBottom="16dp">
 
-                <!-- Start/Stop Button -->
-                <Button
-                    android:id="@+id/btnStartStop"
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:background="@drawable/bg_button_start"
-                    android:text="🟢 Start Sleep"
-                    android:textColor="#FFFFFF"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:gravity="center"
-                    android:layout_marginBottom="12dp" />
+                    <!-- Reset Button -->
+                    <Button
+                        android:id="@+id/btnReset"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:background="@drawable/bg_button_rounded"
+                        android:text="R"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginEnd="12dp" />
 
-                <!-- Save Button -->
+                    <!-- Play Button -->
+                    <Button
+                        android:id="@+id/btnStartStop"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/bg_button_rounded"
+                        android:text="▶"
+                        android:textColor="#000000"
+                        android:textSize="24sp"
+                        android:layout_marginEnd="12dp" />
+
+                    <!-- Stop Button -->
+                    <Button
+                        android:id="@+id/btnStop"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:background="@drawable/bg_button_rounded"
+                        android:text="■"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <!-- Save Button - Full Width -->
                 <Button
                     android:id="@+id/btnSave"
                     android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:background="@drawable/bg_button_secondary"
-                    android:text="💾 Save Sleep Log"
-                    android:textColor="#FFFFFF"
-                    android:textSize="16sp"
+                    android:layout_height="48dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:background="@drawable/bg_button_rounded"
+                    android:text="Save Sleep Log"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
                     android:textStyle="bold"
-                    android:gravity="center"
-                    android:visibility="gone"
-                    android:layout_marginBottom="12dp" />
+                    android:visibility="gone" />
 
             </LinearLayout>
-
-            <!-- How It Works Section -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="🔹 How It Works"
-                android:textColor="#E0E0E0"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="12dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="1. Tap \'Start Sleep\' to begin tracking your sleep session\n2. The timer will count up to track your sleep duration\n3. When you wake up, tap \'Stop Sleep\' to end the session\n4. Review your sleep data and tap \'Save Sleep Log\' to record it"
-                android:textColor="#B0B0B0"
-                android:textSize="13sp"
-                android:lineSpacingExtra="8dp"
-                android:layout_marginBottom="32dp" />
 
             <!-- Success Message (Hidden by default) -->
             <LinearLayout
@@ -159,3 +184,9 @@
     </ScrollView>
 
 </LinearLayout>
+
+
+
+
+
+

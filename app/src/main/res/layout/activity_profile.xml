@@ -4,7 +4,7 @@
     android:id="@+id/profileRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#121212"
+    android:background="#0B0F14"
     android:orientation="vertical"
     android:gravity="center">
 
@@ -48,3 +48,9 @@
         app:backgroundTint="@null" />
 
 </LinearLayout>
+
+
+
+
+
+

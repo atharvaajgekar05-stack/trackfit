@@ -19,6 +19,8 @@ public class SleepTrackerActivity extends AppCompatActivity {
 
     private ImageButton btnBack;
     private Button btnStartStop;
+    private Button btnReset;
+    private Button btnStop;
     private Button btnSave;
     private TextView tvTimer;
     private LinearLayout successMessageContainer;
@@ -43,6 +45,8 @@ public class SleepTrackerActivity extends AppCompatActivity {
         // Initialize views
         btnBack = findViewById(R.id.btnBack);
         btnStartStop = findViewById(R.id.btnStartStop);
+        btnReset = findViewById(R.id.btnReset);
+        btnStop = findViewById(R.id.btnStop);
         btnSave = findViewById(R.id.btnSave);
         tvTimer = findViewById(R.id.tvTimer);
         successMessageContainer = findViewById(R.id.successMessageContainer);
@@ -50,6 +54,8 @@ public class SleepTrackerActivity extends AppCompatActivity {
         // Setup listeners
         setupBackButton();
         setupStartStopButton();
+        setupResetButton();
+        setupStopButton();
         setupSaveButton();
     }
 
@@ -61,10 +67,16 @@ public class SleepTrackerActivity extends AppCompatActivity {
         btnStartStop.setOnClickListener(v -> {
             if (!isTimerRunning) {
                 startTimer();
-            } else {
-                stopTimer();
             }
         });
+    }
+
+    private void setupResetButton() {
+        btnReset.setOnClickListener(v -> resetTimer());
+    }
+
+    private void setupStopButton() {
+        btnStop.setOnClickListener(v -> stopTimer());
     }
 
     private void setupSaveButton() {
@@ -75,8 +87,6 @@ public class SleepTrackerActivity extends AppCompatActivity {
 
     private void startTimer() {
         isTimerRunning = true;
-        btnStartStop.setText("🔴 Stop Sleep");
-        btnStartStop.setBackgroundResource(R.drawable.bg_button_stop);
         btnSave.setVisibility(android.view.View.GONE);
         successMessageContainer.setVisibility(android.view.View.GONE);
 
@@ -97,8 +107,6 @@ public class SleepTrackerActivity extends AppCompatActivity {
     private void stopTimer() {
         isTimerRunning = false;
         timerHandler.removeCallbacks(timerRunnable);
-        btnStartStop.setText("🟢 Start Sleep");
-        btnStartStop.setBackgroundResource(R.drawable.bg_button_start);
         btnSave.setVisibility(android.view.View.VISIBLE);
     }
 
@@ -123,10 +131,10 @@ public class SleepTrackerActivity extends AppCompatActivity {
     }
 
     private void resetTimer() {
+        isTimerRunning = false;
+        timerHandler.removeCallbacks(timerRunnable);
         elapsedTimeMillis = 0;
         tvTimer.setText("00:00:00");
-        btnStartStop.setText("🟢 Start Sleep");
-        btnStartStop.setBackgroundResource(R.drawable.bg_button_start);
         btnSave.setVisibility(android.view.View.GONE);
         successMessageContainer.setVisibility(android.view.View.GONE);
     }

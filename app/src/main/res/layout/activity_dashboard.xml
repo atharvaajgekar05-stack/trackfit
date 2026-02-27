@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#121212">
+    android:background="#0B0F14">
 
     <!-- ── MAIN SCROLLABLE CONTENT ───────────────────────────────────── -->
     <ScrollView
@@ -28,7 +28,7 @@
                 android:id="@+id/topBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#121212"
+                android:background="#0B0F14"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 android:paddingTop="16dp"
@@ -87,7 +87,7 @@
                     app:cpv_progress="1850"
                     app:cpv_maxProgress="2200"
                     app:cpv_trackColor="#2A2A2A"
-                    app:cpv_progressColor="#00E5FF"
+                    app:cpv_progressColor="#39cccc"
                     app:cpv_strokeWidth="16dp"
                     app:cpv_sweepDegrees="280"
                     app:cpv_startAngle="130" />
@@ -154,7 +154,7 @@
                             app:cpv_progress="8432"
                             app:cpv_maxProgress="10000"
                             app:cpv_trackColor="#2A2A2A"
-                            app:cpv_progressColor="#00E5FF"
+                            app:cpv_progressColor="#39cccc"
                             app:cpv_strokeWidth="7dp"
                             app:cpv_sweepDegrees="280"
                             app:cpv_startAngle="130" />
@@ -204,7 +204,7 @@
                             app:cpv_progress="1250"
                             app:cpv_maxProgress="2000"
                             app:cpv_trackColor="#2A2A2A"
-                            app:cpv_progressColor="#00E5FF"
+                            app:cpv_progressColor="#39cccc"
                             app:cpv_strokeWidth="7dp"
                             app:cpv_sweepDegrees="280"
                             app:cpv_startAngle="130" />
@@ -254,7 +254,7 @@
                             app:cpv_progress="75"
                             app:cpv_maxProgress="100"
                             app:cpv_trackColor="#2A2A2A"
-                            app:cpv_progressColor="#00E5FF"
+                            app:cpv_progressColor="#39cccc"
                             app:cpv_strokeWidth="7dp"
                             app:cpv_sweepDegrees="280"
                             app:cpv_startAngle="130" />
@@ -322,7 +322,7 @@
                         android:layout_height="28dp"
                         android:layout_gravity="center"
                         android:src="@drawable/ic_steps"
-                        app:tint="#00E5FF"
+                        app:tint="#39cccc"
                         android:contentDescription="Steps" />
                 </FrameLayout>
 
@@ -352,7 +352,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:text="8,432"
-                            android:textColor="#00E5FF"
+                            android:textColor="#39cccc"
                             android:textSize="14sp"
                             android:textStyle="bold" />
                     </RelativeLayout>
@@ -364,7 +364,7 @@
                         android:layout_height="7dp"
                         android:max="10000"
                         android:progress="8432"
-                        android:progressTint="#00E5FF"
+                        android:progressTint="#39cccc"
                         android:progressBackgroundTint="#333333"
                         android:indeterminate="false" />
                 </LinearLayout>
@@ -392,7 +392,7 @@
                         android:layout_height="28dp"
                         android:layout_gravity="center"
                         android:src="@drawable/ic_sleep"
-                        app:tint="#00E5FF"
+                        app:tint="#39cccc"
                         android:contentDescription="Sleep" />
                 </FrameLayout>
 
@@ -421,7 +421,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:text="7h 30m"
-                            android:textColor="#00E5FF"
+                            android:textColor="#39cccc"
                             android:textSize="14sp"
                             android:textStyle="bold" />
                     </RelativeLayout>
@@ -433,7 +433,7 @@
                         android:layout_height="7dp"
                         android:max="480"
                         android:progress="450"
-                        android:progressTint="#00E5FF"
+                        android:progressTint="#39cccc"
                         android:progressBackgroundTint="#333333"
                         android:indeterminate="false" />
                 </LinearLayout>
@@ -461,7 +461,7 @@
                         android:layout_height="28dp"
                         android:layout_gravity="center"
                         android:src="@drawable/ic_water_drop"
-                        app:tint="#00E5FF"
+                        app:tint="#39cccc"
                         android:contentDescription="Water" />
                 </FrameLayout>
 
@@ -490,7 +490,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:text="1,250 ml"
-                            android:textColor="#00E5FF"
+                            android:textColor="#39cccc"
                             android:textSize="14sp"
                             android:textStyle="bold" />
                     </RelativeLayout>
@@ -502,7 +502,7 @@
                         android:layout_height="7dp"
                         android:max="2000"
                         android:progress="1250"
-                        android:progressTint="#00E5FF"
+                        android:progressTint="#39cccc"
                         android:progressBackgroundTint="#333333"
                         android:indeterminate="false" />
                 </LinearLayout>
@@ -530,7 +530,7 @@
                         android:layout_height="28dp"
                         android:layout_gravity="center"
                         android:src="@drawable/ic_food"
-                        app:tint="#00E5FF"
+                        app:tint="#39cccc"
                         android:contentDescription="Food" />
                 </FrameLayout>
 
@@ -559,7 +559,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:text="1,850 kcal"
-                            android:textColor="#00E5FF"
+                            android:textColor="#39cccc"
                             android:textSize="14sp"
                             android:textStyle="bold" />
                     </RelativeLayout>
@@ -571,7 +571,7 @@
                         android:layout_height="7dp"
                         android:max="2200"
                         android:progress="1850"
-                        android:progressTint="#00E5FF"
+                        android:progressTint="#39cccc"
                         android:progressBackgroundTint="#333333"
                         android:indeterminate="false" />
                 </LinearLayout>
@@ -599,7 +599,7 @@
                         android:layout_height="28dp"
                         android:layout_gravity="center"
                         android:src="@drawable/ic_weight"
-                        app:tint="#00E5FF"
+                        app:tint="#39cccc"
                         android:contentDescription="Weight" />
                 </FrameLayout>
 
@@ -628,7 +628,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:text="75.2 kg"
-                            android:textColor="#00E5FF"
+                            android:textColor="#39cccc"
                             android:textSize="14sp"
                             android:textStyle="bold" />
                     </RelativeLayout>
@@ -640,7 +640,7 @@
                         android:layout_height="7dp"
                         android:max="100"
                         android:progress="75"
-                        android:progressTint="#00E5FF"
+                        android:progressTint="#39cccc"
                         android:progressBackgroundTint="#333333"
                         android:indeterminate="false" />
                 </LinearLayout>
@@ -668,7 +668,7 @@
                         android:layout_height="28dp"
                         android:layout_gravity="center"
                         android:src="@drawable/ic_calories_burned"
-                        app:tint="#00E5FF"
+                        app:tint="#39cccc"
                         android:contentDescription="Calories Burned" />
                 </FrameLayout>
 
@@ -697,7 +697,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:text="420 kcal"
-                            android:textColor="#00E5FF"
+                            android:textColor="#39cccc"
                             android:textSize="14sp"
                             android:textStyle="bold" />
                     </RelativeLayout>
@@ -709,7 +709,7 @@
                         android:layout_height="7dp"
                         android:max="600"
                         android:progress="420"
-                        android:progressTint="#00E5FF"
+                        android:progressTint="#39cccc"
                         android:progressBackgroundTint="#333333"
                         android:indeterminate="false" />
                 </LinearLayout>
@@ -728,7 +728,7 @@
         android:layout_marginBottom="130dp"
         android:src="@drawable/ic_add"
         android:contentDescription="Add Activity"
-        app:backgroundTint="#00E5FF"
+        app:backgroundTint="#39cccc"
         app:tint="#000000"
         app:fabSize="normal"
         app:elevation="10dp" />
@@ -763,7 +763,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Home"
-                android:textColor="#00E5FF"
+                android:textColor="#39cccc"
                 android:textSize="11sp"
                 android:layout_marginTop="3dp" />
         </LinearLayout>
@@ -819,4 +819,10 @@
     </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+
+
+
 
