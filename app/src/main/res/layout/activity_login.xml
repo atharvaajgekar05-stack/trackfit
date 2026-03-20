@@ -40,11 +40,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <!-- Username -->
+        <!-- Email -->
         <TextView
             android:layout_marginTop="24dp"
             android:layout_marginBottom="6dp"
-            android:text="Username"
+            android:text="Email"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
             android:layout_width="match_parent"
@@ -54,7 +54,8 @@
             android:id="@+id/etUsername"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="Enter your username"
+            android:hint="Enter your email"
+            android:inputType="textEmailAddress"
             android:textColor="#FFFFFF"
             android:textColorHint="#8FA3A8"
             android:textSize="16sp"

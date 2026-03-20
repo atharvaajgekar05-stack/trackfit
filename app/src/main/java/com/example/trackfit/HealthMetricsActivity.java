@@ -23,6 +23,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -44,9 +47,13 @@ public class HealthMetricsActivity extends AppCompatActivity {
     private Button btnSave;
     private ImageButton btnCamera;
     private ImageView ivProfilePic;
+    private android.net.Uri selectedImageUri = null;
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
+    
+    private ActivityResultLauncher<Intent> cameraLauncher;
+    private ActivityResultLauncher<Intent> galleryLauncher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +86,44 @@ public class HealthMetricsActivity extends AppCompatActivity {
         btnSave = findViewById(R.id.btnSave);
         btnCamera = findViewById(R.id.btnCamera);
         ivProfilePic = findViewById(R.id.ivProfilePic);
+        
+        // Initialize Launchers early
+        cameraLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                    android.graphics.Bitmap photo = (android.graphics.Bitmap) result.getData().getExtras().get("data");
+                    if (photo != null) {
+                        ivProfilePic.setImageBitmap(photo);
+                        ivProfilePic.setPadding(0, 0, 0, 0);
+                        ivProfilePic.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                        ivProfilePic.clearColorFilter();
+                        // Save to cache and get URI
+                        try {
+                            java.io.File file = new java.io.File(getCacheDir(), "profile_pic.jpg");
+                            java.io.FileOutputStream fOut = new java.io.FileOutputStream(file);
+                            photo.compress(android.graphics.Bitmap.CompressFormat.JPEG, 100, fOut);
+                            fOut.flush();
+                            fOut.close();
+                            selectedImageUri = android.net.Uri.fromFile(file);
+                        } catch (Exception e) {}
+                    }
+                }
+            }
+        );
+
+        galleryLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                    selectedImageUri = result.getData().getData();
+                    ivProfilePic.setImageURI(selectedImageUri);
+                    ivProfilePic.setPadding(0, 0, 0, 0);
+                    ivProfilePic.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                    ivProfilePic.clearColorFilter();
+                }
+            }
+        );
 
         setupSpinners();
         setupGenderRadios();
@@ -197,12 +242,21 @@ public class HealthMetricsActivity extends AppCompatActivity {
 
     private void setupCameraButton() {
         btnCamera.setOnClickListener(v -> {
-            Toast.makeText(this, "Camera button clicked!\nFeature coming soon...", Toast.LENGTH_SHORT).show();
-            // In real app, you would:
-            // - Request camera permission
-            // - Open camera intent
-            // - Take photo
-            // - Save to profile picture
+            String[] options = {"Take Photo", "Choose from Gallery", "Cancel"};
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Select Profile Picture");
+            builder.setItems(options, (dialog, which) -> {
+                if (which == 0) { // Camera
+                    Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                    cameraLauncher.launch(cameraIntent);
+                } else if (which == 1) { // Gallery
+                    Intent galleryIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    galleryLauncher.launch(galleryIntent);
+                } else {
+                    dialog.dismiss();
+                }
+            });
+            builder.show();
         });
     }
 
@@ -255,6 +309,9 @@ public class HealthMetricsActivity extends AppCompatActivity {
             userMetrics.put("weight", weightStr);
             userMetrics.put("weightUnit", spinnerWeightUnit.getSelectedItem().toString());
             userMetrics.put("gender", gender);
+            if (selectedImageUri != null) {
+                userMetrics.put("profileImgUri", selectedImageUri.toString());
+            }
 
             db.collection("users").document(userId)
                 .set(userMetrics)

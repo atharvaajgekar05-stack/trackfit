@@ -7,13 +7,20 @@
     android:background="#0B0F14">
 
     <!-- ── MAIN SCROLLABLE CONTENT ───────────────────────────────────── -->
-    <ScrollView
-        android:id="@+id/scrollView"
+    <!-- ── SWIPE TO REFRESH ──────────────────────────────────────────── -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="72dp"
-        android:clipToPadding="false"
-        android:scrollbars="none">
+        android:layout_marginBottom="72dp">
+
+        <!-- ── MAIN SCROLLABLE CONTENT ───────────────────────────────────── -->
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:scrollbars="none">
 
 
         <LinearLayout
@@ -110,7 +117,7 @@
                         android:id="@+id/tvCaloriesValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="1,850"
+                        android:text="0"
                         android:textColor="#FFFFFF"
                         android:textSize="36sp"
                         android:textStyle="bold"
@@ -163,7 +170,7 @@
                             android:layout_width="22dp"
                             android:layout_height="22dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/ic_steps"
+                            android:src="@drawable/ic_footprints"
                             android:contentDescription="Steps" />
                     </FrameLayout>
 
@@ -171,7 +178,7 @@
                         android:id="@+id/tvStepsSummary"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="8.4k"
+                        android:text="0"
                         android:textColor="#FFFFFF"
                         android:textSize="15sp"
                         android:textStyle="bold"
@@ -221,7 +228,7 @@
                         android:id="@+id/tvWaterSummary"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="1.2L"
+                        android:text="0L"
                         android:textColor="#FFFFFF"
                         android:textSize="15sp"
                         android:textStyle="bold"
@@ -271,7 +278,7 @@
                         android:id="@+id/tvWeightSummary"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="75.2"
+                        android:text="0.0"
                         android:textColor="#FFFFFF"
                         android:textSize="15sp"
                         android:textStyle="bold"
@@ -321,7 +328,7 @@
                         android:layout_width="28dp"
                         android:layout_height="28dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_steps"
+                        android:src="@drawable/ic_footprints"
                         app:tint="#39cccc"
                         android:contentDescription="Steps" />
                 </FrameLayout>
@@ -351,10 +358,20 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
-                            android:text="8,432"
+                            android:text="0"
                             android:textColor="#39cccc"
                             android:textSize="14sp"
                             android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/tvStepsCompleted"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvStepsValue"
+                            android:layout_alignParentEnd="true"
+                            android:text="Goal completed"
+                            android:textColor="#39cccc"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
                     </RelativeLayout>
 
                     <ProgressBar
@@ -363,7 +380,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="7dp"
                         android:max="10000"
-                        android:progress="8432"
+                        android:progress="0"
                         android:progressTint="#39cccc"
                         android:progressBackgroundTint="#333333"
                         android:indeterminate="false" />
@@ -420,10 +437,20 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
-                            android:text="7h 30m"
+                            android:text="0h 0m"
                             android:textColor="#39cccc"
                             android:textSize="14sp"
                             android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/tvSleepCompleted"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvSleepValue"
+                            android:layout_alignParentEnd="true"
+                            android:text="Goal completed"
+                            android:textColor="#39cccc"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
                     </RelativeLayout>
 
                     <ProgressBar
@@ -432,7 +459,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="7dp"
                         android:max="480"
-                        android:progress="450"
+                        android:progress="0"
                         android:progressTint="#39cccc"
                         android:progressBackgroundTint="#333333"
                         android:indeterminate="false" />
@@ -489,10 +516,20 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
-                            android:text="1,250 ml"
+                            android:text="0 ml"
                             android:textColor="#39cccc"
                             android:textSize="14sp"
                             android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/tvWaterCompleted"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvWaterValue"
+                            android:layout_alignParentEnd="true"
+                            android:text="Goal completed"
+                            android:textColor="#39cccc"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
                     </RelativeLayout>
 
                     <ProgressBar
@@ -501,7 +538,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="7dp"
                         android:max="2000"
-                        android:progress="1250"
+                        android:progress="0"
                         android:progressTint="#39cccc"
                         android:progressBackgroundTint="#333333"
                         android:indeterminate="false" />
@@ -558,10 +595,20 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
-                            android:text="1,850 kcal"
+                            android:text="0 kcal"
                             android:textColor="#39cccc"
                             android:textSize="14sp"
                             android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/tvFoodCompleted"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvFoodValue"
+                            android:layout_alignParentEnd="true"
+                            android:text="Goal completed"
+                            android:textColor="#39cccc"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
                     </RelativeLayout>
 
                     <ProgressBar
@@ -570,7 +617,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="7dp"
                         android:max="2200"
-                        android:progress="1850"
+                        android:progress="0"
                         android:progressTint="#39cccc"
                         android:progressBackgroundTint="#333333"
                         android:indeterminate="false" />
@@ -627,10 +674,20 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
-                            android:text="75.2 kg"
+                            android:text="0.0 kg"
                             android:textColor="#39cccc"
                             android:textSize="14sp"
                             android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/tvWeightCompleted"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvWeightValue"
+                            android:layout_alignParentEnd="true"
+                            android:text="Goal completed"
+                            android:textColor="#39cccc"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
                     </RelativeLayout>
 
                     <ProgressBar
@@ -639,7 +696,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="7dp"
                         android:max="100"
-                        android:progress="75"
+                        android:progress="0"
                         android:progressTint="#39cccc"
                         android:progressBackgroundTint="#333333"
                         android:indeterminate="false" />
@@ -667,7 +724,7 @@
                         android:layout_width="28dp"
                         android:layout_height="28dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_calories_burned"
+                        android:src="@drawable/ic_running"
                         app:tint="#39cccc"
                         android:contentDescription="Calories Burned" />
                 </FrameLayout>
@@ -696,10 +753,20 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
-                            android:text="420 kcal"
+                            android:text="0 kcal"
                             android:textColor="#39cccc"
                             android:textSize="14sp"
                             android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/tvCaloriesBurnedCompleted"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvCaloriesBurnedValue"
+                            android:layout_alignParentEnd="true"
+                            android:text="Goal completed"
+                            android:textColor="#39cccc"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
                     </RelativeLayout>
 
                     <ProgressBar
@@ -708,7 +775,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="7dp"
                         android:max="600"
-                        android:progress="420"
+                        android:progress="0"
                         android:progressTint="#39cccc"
                         android:progressBackgroundTint="#333333"
                         android:indeterminate="false" />
@@ -717,6 +784,7 @@
 
         </LinearLayout>
     </ScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <!-- ── FLOATING ACTION BUTTON ─────────────────────────────────────── -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton

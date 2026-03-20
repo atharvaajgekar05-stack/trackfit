@@ -14,6 +14,12 @@
         <item name="android:textColor">@color/button_text_color</item>
         <item name="backgroundTint">@null</item>
     </style>
+
+    <!-- Circular image shape for profile picture -->
+    <style name="ShapeAppearance.App.CircleImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>
 
 

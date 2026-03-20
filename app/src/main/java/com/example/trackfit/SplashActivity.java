@@ -7,9 +7,6 @@ import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-
 public class SplashActivity extends AppCompatActivity {
 
     ProgressBar progressBar;
@@ -42,13 +39,14 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void navigateAfterSplash() {
-        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-
-        if (currentUser != null) {
-            // Already signed in → go straight to Dashboard
+        android.content.SharedPreferences prefs = getSharedPreferences("TrackFitPrefs", MODE_PRIVATE);
+        boolean rememberMe = prefs.getBoolean("remember_me", false);
+        
+        if (rememberMe && com.google.firebase.auth.FirebaseAuth.getInstance().getCurrentUser() != null) {
             startActivity(new Intent(this, DashboardActivity.class));
         } else {
-            // Not signed in → show Login (which has link to Signup)
+            // Ensure sign out if remember me was not checked
+            com.google.firebase.auth.FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(this, LoginActivity.class));
         }
         finish();

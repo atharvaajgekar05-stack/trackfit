@@ -34,11 +34,19 @@ dependencies {
     implementation libs.material
     implementation libs.activity
     implementation libs.constraintlayout
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+    // MPAndroidChart
+    implementation libs.mp.android.chart
 
     // Firebase
     implementation platform(libs.firebase.bom)
     implementation libs.firebase.auth
     implementation libs.firebase.firestore
+
+    // Maps & Places (Replaced with OSM)
+    implementation 'org.osmdroid:osmdroid-android:6.1.18'
+    implementation 'com.android.volley:volley:1.2.1'
 
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit

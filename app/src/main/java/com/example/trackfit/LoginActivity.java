@@ -48,6 +48,10 @@ public class LoginActivity extends AppCompatActivity {
             mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
+                        android.content.SharedPreferences prefs = getSharedPreferences("TrackFitPrefs", MODE_PRIVATE);
+                        com.google.android.material.checkbox.MaterialCheckBox cbRememberMe = findViewById(R.id.cbRememberMe);
+                        prefs.edit().putBoolean("remember_me", cbRememberMe != null && cbRememberMe.isChecked()).apply();
+                        
                         Toast.makeText(LoginActivity.this, "Welcome back!", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

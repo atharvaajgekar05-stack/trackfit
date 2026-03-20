@@ -1,5 +1,17 @@
 <resources>
     <string name="app_name">TrackFit</string>
+
+    <!-- Water Intake Feature -->
+    <string name="water_intake_title">Water Intake</string>
+    <string name="water_intake_helper">Track how much water you drink during the day.</string>
+    <string name="log_intake_section">LOG INTAKE</string>
+    <string name="glass_name">Glass</string>
+    <string name="glass_vol">250 ml</string>
+    <string name="bottle_name">Bottle</string>
+    <string name="bottle_vol">500 ml</string>
+    <string name="large_bottle_name">Large Bottle</string>
+    <string name="large_bottle_vol">1 L</string>
+    <string name="log_water_btn">Log Water</string>
 </resources>
 
 

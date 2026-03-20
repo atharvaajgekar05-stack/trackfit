@@ -49,17 +49,26 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/bg_profile_dashed" />
 
-            <ImageView
-                android:id="@+id/ivProfilePic"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@android:drawable/ic_menu_camera"
-                android:contentDescription="Profile Picture"
-                app:tint="#666666"
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="50dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@android:color/transparent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivProfilePic"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="30dp"
+                    android:src="@android:drawable/ic_menu_camera"
+                    android:contentDescription="Profile Picture"
+                    app:tint="#666666" />
+            </androidx.cardview.widget.CardView>
 
             <ImageButton
                 android:id="@+id/btnCamera"
